@@ -1,11 +1,12 @@
 <h1 align="center"> Simple Springboot application - Expense tracker - MongoDB Database  </h1> <br>
 
 <p align="center">
-  Description: This is a demo testcase on java tech with TestNg framework.
-There is a single test which opens the website: https://anupdamoda.github.io/AceOnlineShoePortal/index.html# and verifies the Title of the website and 
-the same test is being performed in 3 different browsers: Google Chrome, Microsoft Edge, Mozilla Firefox
-and this is being run in AWS Code pipeline 
-</p>
+  <b>Description:</b> This is a simple Springboot application which creates apis for the expenses. the apis will have the below functionalities:
+ <li>get all expenses</li>
+ <li>get all expenses by Category</li>
+ <li>update expense</li>
+ <li>insert new expense</li>
+
 
 
 ## Table of Contents
