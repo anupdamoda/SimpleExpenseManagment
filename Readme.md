@@ -18,15 +18,20 @@
 
 
 ## Introduction
-This is a demo testcase on java tech with TestNg and selenium test.
-https://anupdamoda.github.io/AceOnlineShoePortal/index.html#
-
-## Features
-Selenium Tests
+This is a Spring boot application to create, update and list the expenses in the expense tracker
 
 
-## Test Requirements
 
+## Pre-requisite:
+* Please install MongoDB compass in local machine.
+  https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/
+
+After installation you should be able to connect to the Local Mongo DB connection:
+by default the port that mongodb connection has 27017
+![img.png](img.png)
+
+once connected you will be able to see the databases in the left hand side:
+![img_1.png](img_1.png)
 
 
 ### Local
