@@ -31,7 +31,7 @@ public class Expense {
     private LocalDateTime date;
     ZoneId zone = ZoneId.of("Asia/Kolkata");
 
-    public Expense(String id, String expenseName, ExpenseCategory expenseCategory, BigDecimal expenseAmount, LocalDateTime expenseDate) {
+    public Expense(String id, String expenseName, ExpenseCategory expenseCategory, BigDecimal expenseAmount) {
         this.id = id;
         this.expenseName = expenseName;
         this.expenseCategory = expenseCategory;
