@@ -41,9 +41,11 @@ once connected you will be able to see the databases in the left hand side:
 
 ## Execution modes ## 🤖 Starting up
 
-command: come to the project file and perform "Docker Compose Up"
-once the docker hub and nodes are up and running then perform the tests by right-clicking on the TestNG and running the tests.
-
-This test is designed to run locally or in AWS Codepipeline:
-push the code into Github first.
-
+Start with Spring Starter https://start.spring.io/
+and add dependencies:
+-spring-boot-starter-data-mongodb
+-spring-boot-starter-web
+-lombok
+-spring-boot-starter-test
+-junit-jupiter
+-mongodb
