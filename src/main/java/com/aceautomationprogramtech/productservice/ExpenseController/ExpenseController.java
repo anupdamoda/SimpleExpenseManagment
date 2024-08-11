@@ -30,6 +30,7 @@ public class ExpenseController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<Expense>> getAllExpenses() {
         return ResponseEntity.ok(expenseService.getAllExpenses());
