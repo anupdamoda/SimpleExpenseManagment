@@ -5,6 +5,7 @@ import com.aceautomationprogramtech.productservice.repository.ExpenseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @Service
@@ -41,5 +42,9 @@ public class ExpenseService {
     public void deleteExpense(String id)
     {
         expenseRepository.deleteById(id);
+    }
+
+    public long getCount(){
+        return expenseRepository.findAll().stream().count();
     }
 }

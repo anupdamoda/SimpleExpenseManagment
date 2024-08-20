@@ -2,6 +2,7 @@ package com.aceautomationprogramtech.productservice.ExpenseController;
 
 import com.aceautomationprogramtech.productservice.model.Expense;
 import com.aceautomationprogramtech.productservice.service.ExpenseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -51,6 +52,13 @@ public class ExpenseController {
     public ResponseEntity<Object> deleteExpense(String id){
         expenseService.deleteExpense(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/count")
+    public ResponseEntity<Long> getSum() {
+        return ResponseEntity.ok(expenseService.getCount()
+        );
     }
 
 }
