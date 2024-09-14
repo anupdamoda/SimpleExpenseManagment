@@ -37,12 +37,6 @@ public class ExpenseController {
         return ResponseEntity.ok(expenseService.getAllExpenses());
     }
 
-//    @GetMapping
-//    public ResponseEntity<Object> getAllExpenses(){
-//        expenseService.getAllExpenses();
-//        return ResponseEntity.status(HttpStatus.OK).build();
-//    }
-
     @GetMapping("/{name}")
     public ResponseEntity<Expense> getExpenseByName(@PathVariable String name){
     return ResponseEntity.ok(expenseService.getExpenseByName(name));
