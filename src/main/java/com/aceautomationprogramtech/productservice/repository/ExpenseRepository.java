@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -19,6 +20,8 @@ import java.util.function.Function;
     public interface ExpenseRepository extends MongoRepository<Expense, String> {
         @Query("{'name': ?0}")
         Optional<Expense> findByName(String name);
+
+        List<Expense> findAllByDateBetween(LocalDate fromDate, LocalDate toDate);
     }
 
 

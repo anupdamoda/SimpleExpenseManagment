@@ -49,3 +49,19 @@ and add dependencies:
 -spring-boot-starter-test
 -junit-jupiter
 -mongodb
+
+## Working Tests
+
+# Get all expenses ( without Authentication token)
+![img_2.png](img_2.png)
+
+
+# Get expenses count ( with Authentication token)
+
+![img_3.png](img_3.png)
+
+![img_4.png](img_4.png)
+
+# Get expenses filter by date ( with Authentication token )
+
+![img_5.png](img_5.png)

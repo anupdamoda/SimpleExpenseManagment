@@ -1,12 +1,13 @@
-package com.aceautomationprogramtech.productservice.ExpenseController;
+package com.aceautomationprogramtech.productservice.Controller;
 
 import com.aceautomationprogramtech.productservice.model.Expense;
 import com.aceautomationprogramtech.productservice.service.ExpenseService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -19,6 +20,7 @@ public class ExpenseController {
         this.expenseService = expenseService;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping
     public ResponseEntity addExpense(@RequestBody Expense expense){
       expenseService.addExpense(expense);
@@ -34,7 +36,19 @@ public class ExpenseController {
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<Expense>> getAllExpenses() {
+
+        // Fetch expenses from the database or service layer
+        List<Expense> expenses = expenseService.getAllExpenses();
+  //      return ResponseEntity.ok(expenses);
         return ResponseEntity.ok(expenseService.getAllExpenses());
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/")
+    public List<Expense> getExpensesByDateRange(
+            @RequestParam("from") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fromDate,
+            @RequestParam("to") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate toDate) {
+        return expenseService.getExpensesBetweenDates(fromDate, toDate);
     }
 
     @GetMapping("/{name}")
@@ -48,11 +62,11 @@ public class ExpenseController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/count")
-    public ResponseEntity<Long> getSum() {
-        return ResponseEntity.ok(expenseService.getCount()
-        );
-    }
+//    @CrossOrigin(origins = "http://localhost:3000")
+//    @GetMapping("/count")
+//    public ResponseEntity<Long> getSum() {
+//        return ResponseEntity.ok(expenseService.getCount()
+//        );
+//    }
 
 }
